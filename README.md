@@ -3,7 +3,7 @@ A React component that uses a Youtube video as background for a container.
 
 ## Installation
 ```
-$ npm install react-youtube-background-player
+$ npm install react-youtube-background
 ```
 
 ## Usage
