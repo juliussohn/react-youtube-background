@@ -1,8 +1,8 @@
 import React from 'react';
 import YouTube from 'react-youtube';
-import './styles/Player.css';
+import styles from './styles/Player.css';
 
-class Player extends React.Component {
+class YoutubeBackground extends React.Component {
 
 	constructor(props) {
 		super(props)
@@ -57,7 +57,7 @@ class Player extends React.Component {
 
 	render() {
 		const { videoHeight, videoWidth, videoX, videoY } = this.state
-		const { style, children } = this.props
+		const { style, children, className } = this.props
 		const playerProps = (({
 			videoId,
 			onReady
@@ -76,10 +76,10 @@ class Player extends React.Component {
 		};
 
 		return (
-			<div style={style} ref={c => this.container = c} className="rybp-container">
+			<div style={style} ref={c => this.container = c} className={[styles.container,className].join(' ')}>
 				<div>{children}</div>
 				<div
-					className="rybp-video-container"
+					className={styles.videoContainer}
 					style={{
 						width: videoWidth + 'px',
 						height: videoHeight + 'px',
@@ -91,7 +91,7 @@ class Player extends React.Component {
 						{...playerProps}
 						onEnd={this.onEnd}
 						opts={videoOptions}
-						className="rybp-video-iframe"
+						className={styles.videoIframe}
 					></YouTube>
 				</div>
 			</div>
@@ -100,9 +100,9 @@ class Player extends React.Component {
 	}
 }
 
-Player.defaultProps = {
+YoutubeBackground.defaultProps = {
 	aspectRatio: '16:9',
 	videoId: 'jssO8-5qmag'
 }
 
-export default Player;
+export default YoutubeBackground;
