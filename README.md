@@ -19,8 +19,10 @@ Use the component in you render function
 <YoutubeBackground 
   videoId={string}     // default -> "jssO8-5qmag"
   aspectRatio={string} // default -> "16:9"
+  overlay={string}       // defaults -> null | e.g. "rgba(0,0,0,.4)"
   className={string}   // defaults -> null
   onReady={func}       // defaults -> null
+  
 >
   {/* YOUR CONTENT */}
 </YoutubeBackground>

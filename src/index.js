@@ -13,6 +13,7 @@ class YoutubeBackground extends React.Component {
 			aspectRatio: aspectRatio[0] / aspectRatio[1],
 			videoHeight: 10
 		}
+
 	}
 
 	componentDidMount() {
@@ -55,9 +56,15 @@ class YoutubeBackground extends React.Component {
 		event.target.playVideo();
 	}
 
+	onReady(event){
+		event.target.playVideo();
+		this.props.onReady()
+	}
+
+
 	render() {
 		const { videoHeight, videoWidth, videoX, videoY } = this.state
-		const { style, children, className } = this.props
+		const { style, children, className, overlay } = this.props
 		const playerProps = (({
 			videoId,
 			onReady
@@ -75,6 +82,7 @@ class YoutubeBackground extends React.Component {
 			}
 		};
 
+
 		return (
 			<div style={style} ref={c => this.container = c} className={[styles.container,className].join(' ')}>
 				<div>{children}</div>
@@ -87,9 +95,12 @@ class YoutubeBackground extends React.Component {
 						left: videoX + 'px'
 					}}
 				>
+					{overlay && 
+					<div className={styles.overlay} style = {{backgroundColor: overlay}}></div>}
 					<YouTube
 						{...playerProps}
 						onEnd={this.onEnd}
+						onReady ={this.onReady.bind(this)}
 						opts={videoOptions}
 						className={styles.videoIframe}
 					></YouTube>
@@ -102,7 +113,9 @@ class YoutubeBackground extends React.Component {
 
 YoutubeBackground.defaultProps = {
 	aspectRatio: '16:9',
-	videoId: 'jssO8-5qmag'
+	videoId: 'jssO8-5qmag',
+	overlay: 'false',
+	onReady: ()=>{}
 }
 
 export default YoutubeBackground;
