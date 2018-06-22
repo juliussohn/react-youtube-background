@@ -1,4 +1,4 @@
-# react-youtube-background-player
+# react-youtube-background
 A React component that uses a Youtube video as background for a container.
 
 ## Installation
@@ -10,18 +10,18 @@ $ npm install react-youtube-background-player
 
 Import the component
 ```javascript
-import ReactYoutube from 'react-youtube-background-player'
+import YoutubeBackground from 'react-youtube-background'
 ```
 
 Use the component in you render function
 
 ```jsx
-<ReactYoutube 
+<YoutubeBackground 
   videoId={string}     // default -> "jssO8-5qmag"
   aspectRatio={string} // default -> "16:9"
   className={string}   // defaults -> null
   onReady={func}       // defaults -> null
 >
   {/* YOUR CONTENT */}
-</ReactYoutube>
+</YoutubeBackground>
 ```
