@@ -1,6 +1,6 @@
 {
   "name": "react-youtube-background",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "A library for playing Youtube videos in the background",
   "main": "build/index.js",
   "scripts": {

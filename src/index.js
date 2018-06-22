@@ -78,7 +78,8 @@ class YoutubeBackground extends React.Component {
 				autoplay: 1,
 				controls: 0,
 				rel: 0,
-				showinfo: 0
+				showinfo: 0,
+				mute:1
 			}
 		};
 
