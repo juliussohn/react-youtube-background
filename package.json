@@ -1,5 +1,5 @@
 {
-  "name": "react-youtube-background-player",
+  "name": "react-youtube-background",
   "version": "0.1.0",
   "description": "A library for playing Youtube videos in the background",
   "main": "build/index.js",
@@ -8,9 +8,9 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:juliussohn/react-youtube-background-player.git"
+    "url": "git@github.com:juliussohn/react-youtube-background.git"
   },
-  "homepage": "https://github.com/juliussohn/react-youtube-background-player",
+  "homepage": "https://github.com/juliussohn/react-youtube-background",
   "author": "Julius Elias Sohn <juliussohn@icloud.com> (http://juliussohn.de)",
   "keywords": [
     "react",
@@ -38,5 +38,8 @@
   "peerDependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1"
+  },
+  "dependencies": {
+    "react-youtube": "^7.6.0"
   }
 }
