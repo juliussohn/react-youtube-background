@@ -60,11 +60,7 @@ class YoutubeBackground extends React.Component {
 
   render() {
     const { videoHeight, videoWidth, videoX, videoY } = this.state
-    const { style, children, className, overlay } = this.props
-    const playerProps = (({ videoId, onReady }) => ({
-      videoId,
-      onReady,
-    }))(this.props)
+    const { style, children, className, overlay, videoId } = this.props
 
     const videoOptions = {
       playerVars: {
@@ -99,7 +95,14 @@ class YoutubeBackground extends React.Component {
             />
           )}
           <YouTube
-            {...playerProps}
+            videoId={videoId}
+            onPlay={this.props.onPlay}
+            onPause={this.props.onPause}
+            onEnd={this.props.onEnd}
+            onError={this.props.onError}
+            onStateChange={this.props.onStateChange}
+            onPlaybackRateChange={this.props.onPlaybackRateChange}
+            onPlaybackQualityChange={this.props.onPlaybackQualityChange}
             onEnd={this.onEnd}
             onReady={this.onReady.bind(this)}
             opts={videoOptions}
