@@ -113,7 +113,6 @@ class YoutubeBackground extends React.Component {
 
 YoutubeBackground.defaultProps = {
   aspectRatio: '16:9',
-  videoId: 'jssO8-5qmag',
   overlay: 'false',
   onReady: () => {},
 }
