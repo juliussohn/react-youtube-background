@@ -80,7 +80,8 @@ class YoutubeBackground extends React.Component {
 				rel: 0,
 				showinfo: 0,
 				mute:1
-			}
+			},
+                        host: this.props.nocookie ? 'https://www.youtube-nocookie.com' : 'https://www.youtube.com'
 		};
 
 
