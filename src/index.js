@@ -79,7 +79,7 @@ class YoutubeBackground extends React.Component {
 				controls: 0,
 				rel: 0,
 				showinfo: 0,
-				mute:1
+				mute:0,
 			}
 		};
 
