@@ -67,8 +67,8 @@ class YoutubeBackground extends React.Component {
 	render() {
 		const { videoHeight, videoWidth, videoX, videoY } = this.state
 		const { style, children, className, overlay } = this.props
-		const playerProps = (({ videoId, onReady, onEnd, onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }) => 
-			({ videoId, onReady, onEnd, onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }))(this.props);
+		const playerProps = (({ videoId,  onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }) => 
+			({ videoId,  onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }))(this.props);
 
 		const videoOptions = {
 			playerVars: {
@@ -100,7 +100,8 @@ class YoutubeBackground extends React.Component {
 						<div className={styles.overlay} style={{ backgroundColor: overlay }}></div>}
 					<YouTube
 						{...playerProps}
-					
+						onReady ={this.onReady.bind(this)}
+						onEnd ={this.onEnd.bind(this)}
 						opts={videoOptions}
 						className={styles.videoIframe}
 						containerClassName={styles.videoInnerContainer}
