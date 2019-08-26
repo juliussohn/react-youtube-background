@@ -17,12 +17,12 @@ Use the component in you render function
 
 ```jsx
 <YoutubeBackground
-  videoId={string}     // default -> "jssO8-5qmag"
+  videoId={string}     // default -> null
   aspectRatio={string} // default -> "16:9"
-  overlay={string}       // defaults -> null | e.g. "rgba(0,0,0,.4)"
+  overlay={string}     // defaults -> null | e.g. "rgba(0,0,0,.4)"
   className={string}   // defaults -> null
   onReady={func}       // defaults -> null
-  nocookie            // sets host to https://www.youtube-nocookie.com to avoid loading Google's cookies
+  nocookie             // sets host to https://www.youtube-nocookie.com to avoid loading Google's cookies
 >
   {/* YOUR CONTENT */}
 </YoutubeBackground>
