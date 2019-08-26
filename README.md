@@ -3,14 +3,14 @@ A React component that uses a Youtube video as background for a container.
 
 ## Installation
 ```
-$ npm install react-youtube-background-private
+$ npm install react-youtube-background
 ```
 
 ## Usage
 
 Import the component
 ```javascript
-import YoutubeBackground from 'react-youtube-background-private'
+import YoutubeBackground from 'react-youtube-background'
 ```
 
 Use the component in you render function
