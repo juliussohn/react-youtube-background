@@ -125,6 +125,7 @@ YoutubeBackground.propTypes = {
 YoutubeBackground.defaultProps = {
 	aspectRatio: '16:9',
 	overlay: 'false',
+	nocookie: false,
 	onReady: () => { },
 	onPlay: () => { },
 	onPause: () => { },
