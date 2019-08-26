@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import YouTube from 'react-youtube';
 import styles from './styles/Player.css';
 
@@ -52,41 +53,38 @@ class YoutubeBackground extends React.Component {
 		});
 	}
 
-	onEnd (event){
+	onEnd(event) {
 		event.target.playVideo();
+		this.props.onEnd(event)
 	}
 
-	onReady(event){
+	onReady(event) {
 		event.target.playVideo();
-		this.props.onReady()
+		this.props.onReady(event)
 	}
 
 
 	render() {
 		const { videoHeight, videoWidth, videoX, videoY } = this.state
 		const { style, children, className, overlay } = this.props
-		const playerProps = (({
-			videoId,
-			onReady
-		}) => ({
-			videoId,
-			onReady
-		}))(this.props);
+		const playerProps = (({ videoId, onReady, onEnd, onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }) => 
+			({ videoId, onReady, onEnd, onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }))(this.props);
 
 		const videoOptions = {
-			playerVars: { 
+			playerVars: {
 				autoplay: 1,
 				controls: 0,
 				rel: 0,
 				showinfo: 0,
-				mute:1
+				mute: 1,
+				modestbranding:1
 			},
-                        host: this.props.nocookie ? 'https://www.youtube-nocookie.com' : 'https://www.youtube.com'
+			host: this.props.nocookie ? 'https://www.youtube-nocookie.com' : 'https://www.youtube.com'
 		};
 
 
 		return (
-			<div style={style} ref={c => this.container = c} className={[styles.container,className].join(' ')}>
+			<div style={style} ref={c => this.container = c} className={[styles.container, className].join(' ')}>
 				<div>{children}</div>
 				<div
 					className={styles.videoContainer}
@@ -97,14 +95,14 @@ class YoutubeBackground extends React.Component {
 						left: videoX + 'px'
 					}}
 				>
-					{overlay && 
-					<div className={styles.overlay} style = {{backgroundColor: overlay}}></div>}
+					{overlay &&
+						<div className={styles.overlay} style={{ backgroundColor: overlay }}></div>}
 					<YouTube
 						{...playerProps}
-						onEnd={this.onEnd}
-						onReady ={this.onReady.bind(this)}
+					
 						opts={videoOptions}
 						className={styles.videoIframe}
+						containerClassName={styles.videoInnerContainer}
 					></YouTube>
 				</div>
 			</div>
@@ -113,11 +111,25 @@ class YoutubeBackground extends React.Component {
 	}
 }
 
+YoutubeBackground.propTypes = {
+	videoId: PropTypes.string.isRequired,
+	aspectRatio: PropTypes.string,
+	overlay: PropTypes.string,
+	className: PropTypes.string,
+	onReady: PropTypes.func,
+	onEnd: PropTypes.func,
+};
+
+
 YoutubeBackground.defaultProps = {
 	aspectRatio: '16:9',
-	videoId: 'jssO8-5qmag',
 	overlay: 'false',
-	onReady: ()=>{}
+	onReady: () => { },
+	onPlay: () => { },
+	onPause: () => { },
+	onError: () => { },
+	onEnd: () => { },
 }
+
 
 export default YoutubeBackground;
