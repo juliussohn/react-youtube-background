@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-	mode: 'production',
+    mode: 'production',
     entry: './src/index.js',
     output: {
         path: path.resolve('build'),
@@ -14,11 +14,22 @@ module.exports = {
                 test: /\.jsx?$/,
                 exclude: /(node_modules)/,
                 use: 'babel-loader'
-			},
-			{
-				test: /\.css$/,
-				loader: 'style-loader!css-loader?modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]'
-			 }
+            },
+            {
+                test: /\.css$/,
+                use: ['style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 1,
+                            modules:{
+                                localIdentName: '[name]__[local]___[hash:base64:5]'
+                            },
+
+
+                        }
+                    }],
+            }
         ]
     }
 }
