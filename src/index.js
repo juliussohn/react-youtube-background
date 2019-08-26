@@ -77,7 +77,8 @@ class YoutubeBackground extends React.Component {
 				rel: 0,
 				showinfo: 0,
 				mute: 1,
-				modestbranding:1
+				modestbranding:1,
+				iv_load_policy: 3
 			},
 			host: this.props.nocookie ? 'https://www.youtube-nocookie.com' : 'https://www.youtube.com'
 		};
