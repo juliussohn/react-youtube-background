@@ -19,17 +19,17 @@ Use the component in you render function
 <YoutubeBackground
   videoId={string}                // default -> null
   aspectRatio={string}            // default -> "16:9"
-  overlay={string}                // defaults -> null | e.g. "rgba(0,0,0,.4)"
-  className={string}              // defaults -> null
-  nocookie={bool}                 // defaults -> false sets host to https://www.youtube-nocookie.com to avoid loading Google's cookies
-  onReady={func}                  // defaults -> null
-  onEnd={func}                    // defaults -> null
-  onPlay={func}                   // defaults -> null
-  onPause={func}                  // defaults -> null
-  onError={func}                  // defaults -> null
-  onStateChange={func}            // defaults -> null
-  onPlaybackRateChange={func}     // defaults -> null
-  onPlaybackQualityChange={func}  // defaults -> null
+  overlay={string}                // default -> null | e.g. "rgba(0,0,0,.4)"
+  className={string}              // default -> null
+  nocookie={bool}                 // default -> false | sets host to https://www.youtube-nocookie.com to avoid loading Google's cookies
+  onReady={func}                  // default -> null | returns event with player object
+  onEnd={func}                    // default -> null | returns event with player object
+  onPlay={func}                   // default -> null | returns event with player object
+  onPause={func}                  // default -> null | returns event with player object
+  onError={func}                  // default -> null | returns event with player object
+  onStateChange={func}            // default -> null | returns event with player object
+  onPlaybackRateChange={func}     // default -> null | returns event with player object
+  onPlaybackQualityChange={func}  // default -> null | returns event with player object
 
 >
   {/* YOUR CONTENT */}
