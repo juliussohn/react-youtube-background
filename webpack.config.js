@@ -13,7 +13,12 @@ module.exports = {
             {
                 test: /\.jsx?$/,
                 exclude: /(node_modules)/,
-                use: 'babel-loader'
+                use: {
+                    loader: 'babel-loader',
+                    options: {
+                        presets: ['env']
+                    }
+                }
             },
             {
                 test: /\.css$/,
@@ -22,7 +27,7 @@ module.exports = {
                         loader: 'css-loader',
                         options: {
                             importLoaders: 1,
-                            modules:{
+                            modules: {
                                 localIdentName: '[name]__[local]___[hash:base64:5]'
                             },
 

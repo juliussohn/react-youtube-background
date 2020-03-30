@@ -1,60 +1,34 @@
 {
-  "_args": [
-    [
-      "react-youtube-background-private@0.1.5",
-      "/mnt/d/Ultrahack/ultramaterials"
-    ]
-  ],
-  "_from": "react-youtube-background-private@0.1.5",
-  "_id": "react-youtube-background-private@0.1.5",
-  "_inBundle": false,
-  "_integrity": "sha1-VKuoDNoh1Bp6D5Vkk6dDY+W/Rh4=",
-  "_location": "/react-youtube-background-private",
-  "_phantomChildren": {},
-  "_requested": {
-    "type": "version",
-    "registry": true,
-    "raw": "react-youtube-background-private@0.1.4",
-    "name": "react-youtube-background-private",
-    "escapedName": "react-youtube-background-private",
-    "rawSpec": "0.1.5",
-    "saveSpec": null,
-    "fetchSpec": "0.1.5"
+  "name": "react-youtube-background",
+  "version": "1.0.0",
+  "description": "A library for playing Youtube videos in the background",
+  "main": "build/index.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack --watch"
   },
-  "_requiredBy": [
-    "/"
-  ],
-  "_resolved": "https://registry.npmjs.org/react-youtube-background-private/-/react-youtube-background-private-0.1.5.tgz",
-  "_spec": "0.1.5",
-  "_where": "/mnt/d/Ultrahack/ultramaterials",
-  "author": {
-    "name": "Vedran Brnjetic",
-    "email": "vedran.brnjetic@metropolia.fi"
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:juliussohn/react-youtube-background.git"
   },
-  "bugs": {
-    "url": "https://github.com/vedran-brnjetic/react-youtube-background/issues"
-  },
-  "dependencies": {
-    "babel-preset-es2015": "^6.24.1",
-    "react-youtube": "^7.6.0"
-  },
-  "description": "A library for playing Youtube videos in the background with nocookie option",
+  "homepage": "https://github.com/juliussohn/react-youtube-background",
+  "author": "Julius Elias Sohn <juliussohn@icloud.com> (http://juliussohn.de)",
   "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-loader": "^7.1.4",
-    "babel-preset-env": "^1.6.1",
-    "babel-preset-react": "^6.16.0",
-    "babel-preset-stage-0": "^6.24.1",
-    "css-loader": "^3.2.0",
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7.1.5",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-plugin-transform-react-jsx": "^6.24.1",
+    "babel-preset-env": "^1.7.0",
+    "css-loader": "^3.4.2",
     "path": "^0.12.7",
     "prop-types": "^15.7.2",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "style-loader": "^0.21.0",
-    "webpack": "4.11.0",
-    "webpack-cli": "3.1.1"
+    "webpack-cli": "^3.3.11"
   },
-  "homepage": "https://github.com/vedran-brnjetic/react-youtube-background",
+
   "keywords": [
     "react",
     "youtube",
@@ -62,19 +36,5 @@
     "react-component",
     "background"
   ],
-  "license": "ISC",
-  "main": "build/index.js",
-  "name": "react-youtube-background",
-  "peerDependencies": {
-    "react": "^16.4.1",
-    "react-dom": "^16.4.1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/vedran-brnjetic/react-youtube-background.git"
-  },
-  "scripts": {
-    "build": "webpack"
-  },
-  "version": "0.2.1"
+  "license": "ISC"
 }

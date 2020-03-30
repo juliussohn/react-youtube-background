@@ -15,7 +15,19 @@ class YoutubeBackground extends React.Component {
 			videoHeight: 10
 		}
 
+		this.defaultPlayerVars = {
+			autoplay: 1,
+			controls: 0,
+			rel: 0,
+			showinfo: 0,
+			mute: 1,
+			modestbranding:1,
+			iv_load_policy: 3,
+			playsinline:1,
+		}
 	}
+
+	
 
 	componentDidMount() {
 		this.updateDimensions();
@@ -66,19 +78,14 @@ class YoutubeBackground extends React.Component {
 
 	render() {
 		const { videoHeight, videoWidth, videoX, videoY } = this.state
-		const { style, children, className, overlay } = this.props
-		const playerProps = (({ videoId,  onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }) => 
+		const { style, children, className, overlay, playerOptions } = this.props
+		const playerProps = (({ videoId,  onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange}) => 
 			({ videoId,  onPlay, onPause, onError, onStateChange, onPlaybackRateChange, onPlaybackQualityChange }))(this.props);
 
 		const videoOptions = {
 			playerVars: {
-				autoplay: 1,
-				controls: 0,
-				rel: 0,
-				showinfo: 0,
-				mute: 1,
-				modestbranding:1,
-				iv_load_policy: 3
+				...this.defaultPlayerVars,
+				...playerOptions
 			},
 			host: this.props.nocookie ? 'https://www.youtube-nocookie.com' : 'https://www.youtube.com'
 		};
@@ -120,6 +127,7 @@ YoutubeBackground.propTypes = {
 	className: PropTypes.string,
 	onReady: PropTypes.func,
 	onEnd: PropTypes.func,
+	playerOptions: PropTypes.object
 };
 
 
@@ -127,6 +135,7 @@ YoutubeBackground.defaultProps = {
 	aspectRatio: '16:9',
 	overlay: 'false',
 	nocookie: false,
+	playerOptions:{},
 	onReady: () => { },
 	onPlay: () => { },
 	onPause: () => { },
