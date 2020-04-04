@@ -93,7 +93,7 @@ class YoutubeBackground extends React.Component {
 
 		return (
 			<div style={style} ref={c => this.container = c} className={[styles.container, className].join(' ')}>
-				<div>{children}</div>
+				<>{children}</>
 				<div
 					className={styles.videoContainer}
 					style={{
